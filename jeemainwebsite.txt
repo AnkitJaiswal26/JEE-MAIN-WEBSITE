@@ -1,0 +1,9 @@
+JEEMAIN WEBSITE
+
+HOMEPAGE:
+1. Hover effects for our .info.container(glow)
+2. Proper footer
+	a. News Letter
+3. Chat App
+4. Parallax(if needer to header)
+5. Color theme
