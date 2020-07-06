@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!--Random CSS-->
+    <link rel="stylesheet" href="../static/CSS/Register.css">
+</head>
+<body>
+
+
+    <div class="limiter">
+        <div class="container-login100" style="background: #03a9f4;">
+            <div class="wrap-login100 ">
+                <form class="login100-form" method="POST">
+                    {{ form.hidden_tag() }}
+                    <span class="login100-form-title">
+                        Register
+                    </span>
+                    <div class="wrap-input100 validate-input">
+                        {{ form.username.label(class="label-input100 form-control-label") }}
+
+                        {% if form.username.errors %}
+                            {{ form.username(class="input100 is-invalid form-control form-control-lg", placeholder="Type your username", autocomplete="off") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.username.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+
+                        {% else %}
+                            {{ form.username(class="input100 form-control form-control-lg", placeholder="Type your username", autocomplete="off") }}
+                        {% endif %}
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        {{ form.email.label(class="label-input100 form-control-label") }}
+
+
+                        {% if form.email.errors %}
+                            {{ form.email(class="input100 is-invalid form-control form-control-lg", placeholder="Type your email", autocomplete="off") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span> {{ error }} </span>
+                                {% endfor %}
+                            </div>
+
+                        {% else %}
+                            {{ form.email(class="input100 form-control form-control-lg", placeholder="Type your email", autocomplete="off") }}
+                        {% endif %}        
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        {{ form.password.label(class="label-input100 form-control-label") }}
+
+                        {% if form.password.errors %}
+                            {{ form.password(class="input100 is-invalid form-control form-control-lg", placeholder="Type your password", autocomplete="off") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+
+                        {% else %}
+                            {{ form.password(class="input100 form-control form-control-lg", placeholder="Type your password", autocomplete="off") }}
+                        {% endif %}
+                    </div>
+
+                    <div class="wrap-input101 validate-input">
+                        {{ form.confirm_password.label(class="label-input100 form-control-label") }}
+                        {% if form.confirm_password.errors %}
+                            {{ form.confirm_password(class="input100 is-invalid form-control form-control-lg", placeholder="Type your password", autocomplete="off") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.confirm_password.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+
+                        {% else %}
+                            {{ form.confirm_password(class="input100 form-control form-control-lg", placeholder="Type your password", autocomplete="off") }}
+                        {% endif %}
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                                {{ form.submit(class="login100-form-btn btn") }}
+                        </div>
+                    </div>
+                    <div class="txt1 text-center">
+                        <span>
+                            Or Sign Up Using
+                        </span>
+                    </div>
+                    <div class="signupusing">
+                        <a href="#" class="login100-social-item bg1">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="login100-social-item bg2">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="login100-social-item bg3">
+                            <i class="fa fa-google"></i>
+                        </a>
+                    </div>
+                    <div class="signup">
+                        <span class="sign">
+                            Already have an Account?
+                        </span>
+                        <a href="{{ url_for('login') }}" class="txt2">
+                            Login
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
